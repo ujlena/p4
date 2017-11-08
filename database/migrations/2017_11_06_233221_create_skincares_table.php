@@ -22,7 +22,6 @@ class CreateSkincaresTable extends Migration
             $table->float('price');
             $table->string('skintype');
             $table->string('url')->nullable();
-            $table->string('reviews')->comment("Users can leave comments about based on their experiences about the skincares.");
         });
     }
 
