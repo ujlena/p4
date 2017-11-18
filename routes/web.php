@@ -47,6 +47,9 @@ Route::get('/env', function () {
     dump(config('app.url'));
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController');
+
+Route::get('/skincare/', 'SkincareController@index');
+
+Route::get('/show-all/', 'SkincareController@showAll');
+
