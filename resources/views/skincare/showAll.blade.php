@@ -4,9 +4,6 @@
     All Skincare Products
 @endsection
 
-@push("head")
-@endpush
-
 @section("content")
     <h1>See All Skincares</h1>
 		@foreach($products as $product) 
@@ -18,6 +15,3 @@
         	<p>website: {{ $product->url }}</p>
         @endforeach
 @endsection
-
-@push("body")
-@endpush

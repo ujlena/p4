@@ -4,10 +4,6 @@
     Find your skincare products
 @endsection
 
-@push("head")
-    
-@endpush
-
 @section("content")
     <h1>Find your skincare products</h1>
 	<form method="GET" action="/skincare/match-products">
