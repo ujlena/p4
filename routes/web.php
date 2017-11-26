@@ -53,6 +53,10 @@ Route::get('/skincare/', 'SkincareController@index');
 
 Route::get('/show-all/', 'SkincareController@showAll');
 
-Route::get('/skincare/create', 'SkincareController@create');
-Route::post('/skincare/', 'SkincareController@store');
+
+Route::get('/show-all/create', 'SkincareController@create');
+Route::post('/show-all/', 'SkincareController@store');
+
+Route::get('/show-all/{id}/edit', 'SkincareController@edit');
+Route::put('/show-all/{id}', 'SkincareController@update');
 

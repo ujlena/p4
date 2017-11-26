@@ -1,16 +1,17 @@
 @extends("layouts.master")
 
 @section("title")
-    Create new skincare product
+    Edit skincare product
 @endsection
 
 @push("head")
 @endpush
 
 @section("content")
-    <h1>Create new skincare product</h1>
-    <form method='POST' action='/show-all'>
+    <h1>Edit skincare product: {{ $skincare->name }} from {{ $skincare->brand }}</h1>
+    <form method='POST' action='/show-all/{{ $skincare->id }}'>
 
+        {{ method_field('put') }}
         {{ csrf_field() }}
         <p>
             <label for='type'>Type</label>
@@ -32,7 +33,7 @@
 
         <p>
             <label for='brand'>Brand</label>
-            <input type='text' name='brand' id='brand' value="{{ old('brand', 'Fresh') }}">
+            <input type='text' name='brand' id='brand' value="{{ old('brand', $skincare->brand) }}">
             @if($errors->get('brand'))
                 <ul>
                     @foreach($errors->get('brand') as $error)
@@ -44,7 +45,7 @@
 
         <p>
             <label for='name'>Name</label>
-            <input type='text' name='name' id='name' value="{{ old('name', 'Soy Face Cleanser') }}">
+            <input type='text' name='name' id='name' value="{{ old('name', $skincare->name) }}">
             @if($errors->get('name'))
                 <ul>
                     @foreach($errors->get('name') as $error)
@@ -56,7 +57,7 @@
 
         <p>
             <label for='price'>Price $</label>
-            <input type='number' name='price' id='price' value="{{ old('price', '38') }}">
+            <input type='number' name='price' id='price' value="{{ old('price', $skincare->price) }}">
             @if($errors->get('price'))
                 <ul>
                     @foreach($errors->get('price') as $error)
@@ -94,7 +95,7 @@
 
         <p>
             <label for='url'>Website</label>
-            <input type='text' name='url' id='url' value="{{ old('url', 'http://www.fresh.com/US/best-sellers/soy-face-cleanser/H00000002.html#prevPage=menu&start=1&cgid=cleansers') }}">
+            <input type='text' name='url' id='url' value="{{ old('url', $skincare->url) }}">
             @if($errors->get('url'))
                 <ul>
                     @foreach($errors->get('url') as $error)
@@ -105,7 +106,7 @@
         </p>
 
         <p>
-            <input type='submit' class='btn' value='Add Product'>
+            <input type='submit' class='btn' value='Save Changes'>
         </p>
     </form>
 @endsection
