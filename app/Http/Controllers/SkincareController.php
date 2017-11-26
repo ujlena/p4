@@ -91,4 +91,19 @@ class SkincareController extends Controller
 
         return redirect('/show-all/'.$id.'/edit')->with('alert', 'Your changes were saved.');
     }
+
+    public function delete($id)
+    {
+        $skincare = Skincare::find($id);
+
+        if(!$skincare) {
+            return redirect('/show-all')->with('alert', 'No product found.');
+        }
+        
+        $skincare->delete();
+        $deletedProductBrand = $skincare->brand;
+        $deletedProductName = $skincare->name;
+
+        return redirect('/show-all')->with('alert', $deletedProductBrand.' | '.$deletedProductName . ' has been deleted.');
+    }
 }
