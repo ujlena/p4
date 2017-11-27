@@ -1,3 +1,52 @@
+html {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline-block;
+	padding: .1em 1em;
+	margin: 0 1em 2em 0;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #333;
+}
+
+ul li a:hover {
+	color: #000;
+}
+
+nav ul li {
+	font-size: 1em;
+	font-weight: bold;
+	padding: 0 .2em;
+}
+
+nav ul li a:hover {
+	border-top: 3px double #000;
+	border-bottom: 3px double #000;
+}
+
+body {
+	background-color: #fff;
+	font-family: Lucida Console, Courier, monospace;
+	width: 80%;
+	margin: 2em;
+}
+
+header h1 {
+	color: red;
+}
 
 .alert {
 	background-color: yellow;
@@ -8,4 +57,60 @@
 	padding: 5px;
 	font-weight: bold;
 	text-align: center;
+}
+
+p#nowedit {
+	border: 1px solid red;
+}
+
+form, div.mainfield {
+	border: 3px double #e6e6e6;
+	margin-top: 2em;
+}
+
+p a {
+	color: #333;
+	text-decoration: underline;
+}
+
+p a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+section h1 {
+	color: orange;
+}
+.newestProduct {
+	background-color: #ffffe6;
+}
+
+input[type=text] {
+	width: 30%;
+}
+
+ul.sublist li {
+	font-size: .8em;
+	border: 2px solid #000;
+}
+
+ul.sublist li a:hover {
+	color: #555;
+	text-decoration: underline;
+}
+
+ul.sublist {
+	border-bottom: 1px solid #e6e6e6;
+	padding-bottom: 1em;
+
+}
+ul li.inputerror {
+	color: red;
+	font-size: .8em;
+	margin-left: 2em;
+}
+
+footer {
+	margin-top: 10em;
+	color: gray;
 }

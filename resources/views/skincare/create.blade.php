@@ -20,11 +20,10 @@
                 <option value='Moisturizers' {{ (old("type") == "Moisturizers") ? "SELECTED" : "" }}>Moisturizers</option>
                 <option value='Eyecreams' {{ (old("type") == "Eyecreams") ? "SELECTED" : "" }}>Eye Creams</option>
             </select>
-
             @if($errors->get('type'))
                 <ul>
                     @foreach($errors->get('type') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif
@@ -36,7 +35,7 @@
             @if($errors->get('brand'))
                 <ul>
                     @foreach($errors->get('brand') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif
@@ -48,7 +47,7 @@
             @if($errors->get('name'))
                 <ul>
                     @foreach($errors->get('name') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif
@@ -60,7 +59,7 @@
             @if($errors->get('price'))
                 <ul>
                     @foreach($errors->get('price') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif
@@ -86,7 +85,7 @@
             @if($errors->get('skintype'))
                 <ul>
                     @foreach($errors->get('skintype') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
             @endif
@@ -98,7 +97,7 @@
             @if($errors->get('url'))
                 <ul>
                     @foreach($errors->get('url') as $error)
-                        <li>{{ $error }}</li>
+                        <li class='inputerror'>{{ $error }}</li>
                     @endforeach
                 </ul>
              @endif

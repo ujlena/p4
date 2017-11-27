@@ -5,24 +5,25 @@
 @endsection
 
 @section("content")
-    <div class='newestProduct' style='background-color:yellow'>
+    <h1>See All Skincares</h1>
+    <div class='newestProduct'>
         <h1>New Skincare Products were recently added</h1>
         @foreach($newestProduct as $product) 
         <p>: {{ $product->type }} | {{ $product->brand }} | {{ $product->name }}</p>
         @endforeach
     </div>
-
-    <h1>See All Skincares</h1>
+    <div class='mainfield'>
 		@foreach($products as $product) 
-        	<h2>Type: {{ $product->type }}</h2>
+        	<p>Type: {{ $product->type }}</p>
         	<p>Brand: {{ $product->brand }}</p>
         	<p>Name: {{ $product->name }}</p>
-        	<p>Price: {{ $product->price }}</p>
+        	<p>Price: ${{ $product->price }}</p>
         	<p>Skintype: {{ $product->skintype }}</p>
-        	<p>Website: {{ $product->url }}</p>
-            <ul>
+        	<p>Website: <a href='{{ $product->url }}' target='_blank'>Visit website</a></p>
+            <ul class='sublist'>
                 <li><a href="/show-all/{{ $product['id'] }}/edit">edit</a></li>
                 <li><a href="/show-all/{{ $product['id'] }}/delete">delete</a></li>
             </ul>
         @endforeach
+    </div>
 @endsection

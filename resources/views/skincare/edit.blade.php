@@ -8,7 +8,9 @@
 @endpush
 
 @section("content")
-    <h1>Edit skincare product: {{ $skincare->name }} from {{ $skincare->brand }}</h1>
+    <h1>You're editing .. </h1> 
+    <p id='nowedit'>{{ $skincare->name }} from {{ $skincare->brand }}</p>
+
     <form method='POST' action='/show-all/{{ $skincare->id }}'>
 
         {{ method_field('put') }}
