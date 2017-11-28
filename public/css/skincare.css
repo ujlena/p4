@@ -1,6 +1,5 @@
 html {
 	box-sizing: border-box;
-	text-align: center;
 }
 
 *, *::before, *::after {
@@ -9,6 +8,7 @@ html {
 
 ul {
 	list-style: none;
+
 }
 
 ul li {
@@ -26,10 +26,26 @@ ul li a:hover {
 	color: #000;
 }
 
+header h1 {
+	width: 34%;
+	float: left;
+	text-align: center;
+}
+
+nav {
+	width: 65%;
+	float: left;
+}
+
+section {
+	clear: both;
+}
+
 nav ul li {
 	font-size: 1em;
 	font-weight: bold;
 	padding: 0 .2em;
+	margin: 1em .5em 0 .5em;
 }
 
 nav ul li a:hover {
@@ -40,12 +56,17 @@ nav ul li a:hover {
 body {
 	background-color: #fff;
 	font-family: Lucida Console, Courier, monospace;
-	width: 80%;
+	
 	margin: 2em;
 }
 
+section {
+	text-align: center;
+}
+
+
 header h1 {
-	color: red;
+	
 }
 
 .alert {
@@ -60,12 +81,24 @@ header h1 {
 }
 
 p#nowedit {
-	border: 1px solid red;
+	border: 1px dotted red;
+
 }
 
 form, div.mainfield {
 	border: 3px double #e6e6e6;
 	margin-top: 2em;
+}
+
+
+
+form .foralign {
+	/*border: 1px solid green;*/
+	text-align: left;
+	margin-left: 10em;
+	margin-right: 10em;
+	padding-left: 15em;
+
 }
 
 p a {
@@ -80,7 +113,9 @@ p a:hover {
 
 section h1 {
 	color: orange;
+	padding-top: 2em;
 }
+
 .newestProduct {
 	background-color: #ffffe6;
 }
@@ -108,6 +143,16 @@ ul li.inputerror {
 	color: red;
 	font-size: .8em;
 	margin-left: 2em;
+}
+
+img#mainimg {
+	width: 100%;
+	opacity: 0.5;
+	padding-top: 0;
+}
+
+img#mainimg:hover {
+	opacity: 1;
 }
 
 footer {

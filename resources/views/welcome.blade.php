@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Skincare Finder</title>
-</head>
-<body>
-    <h1>Welcome to Skincare Finder</h1>
-</body>
-</html>
+@extends("layouts.master")
+
+@section("title")
+    Find your skincare products
+@endsection
+
+@section("content")
+    <h1 class="pagetitle">Welcome to Skincare Finder!</h1>
+	<a href="/skincare" id="mainimglink"><img src="images/mainimg.jpg" alt="main" id="mainimg"></a>
+@endsection

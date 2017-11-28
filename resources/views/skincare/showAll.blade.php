@@ -7,9 +7,9 @@
 @section("content")
     <h1>See All Skincares</h1>
     <div class='newestProduct'>
-        <h1>New Skincare Products were recently added</h1>
+        <h3>New Skincare Products were recently added</h3>
         @foreach($newestProduct as $product) 
-        <p>: {{ $product->type }} | {{ $product->brand }} | {{ $product->name }}</p>
+        <p>{{ $product->type }} | {{ $product->brand }} | {{ $product->name }}</p>
         @endforeach
     </div>
     <div class='mainfield'>

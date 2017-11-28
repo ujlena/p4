@@ -52,7 +52,7 @@ class SkincareController extends Controller
     	$skincare->url = $request->input('url'); 
     	$skincare->save();
 	
-    	return redirect('/show-all/')->with('alert', 'New product '.$request->input('name').' just added!');
+    	return redirect('/show-all/')->with('alert', 'New product "'.$request->input('name').'" just added!');
     }
 
     public function edit($id)
