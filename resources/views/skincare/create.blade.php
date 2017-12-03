@@ -34,7 +34,15 @@
 
             <p>
                 <label for='brand'>Brand</label>
+                <select name='brand' id='brand'>
+                    @foreach($brandsForDropDown as $id => $name)
+                        <option value='{{ $id }}'>{{ $name }}</option>
+                    @endforeach
+                </select>
+
+                <!--
                 <input type='text' name='brand' id='brand' value="{{ old('brand') }}" placeholder='Fresh'>
+                -->
                 @if($errors->get('brand'))
                     <ul>
                         @foreach($errors->get('brand') as $error)
@@ -43,6 +51,10 @@
                     </ul>
                  @endif
             </p>
+
+
+
+
 
             <p>
                 <label for='name'>Name</label>

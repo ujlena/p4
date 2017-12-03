@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Skincare;
+use App\Brand;
 
 class SkincaresTableSeeder extends Seeder
 {
@@ -33,11 +34,15 @@ class SkincaresTableSeeder extends Seeder
         $count = count($skincares);
 
         foreach ($skincares as $key => $skincare) {
+            $brand_name = $skincare[1];
+            $brand_id = Brand::where('name', '=', $brand_name)->pluck('id')->first();
+            dump($brand_id);
         	Skincare::insert([
 	        	'created_at' => Carbon\Carbon::now()->subDays($count)->toDateTimeString(),
 	        	'updated_at' => Carbon\Carbon::now()->subDays($count)->toDateTimeString(),
 	        	'type' => $skincare[0],
-	        	'brand' => $skincare[1],
+	        	#'brand' => $skincare[1],
+                'brand_id' => $brand_id,
 	        	'name' => $skincare[2],
 	        	'price' => $skincare[3],
 	        	'skintype' => $skincare[4],

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Skincare;
+use App\Brand;
 
 class SkincareController extends Controller
 {
@@ -26,7 +27,18 @@ class SkincareController extends Controller
 
     public function create() 
     {
-    	return view('skincare.create');
+        /*$brands = Brand::get();
+        $brandsForDropDown = [];
+
+        foreach ($brands as $brand) {
+            $brandsForDropDown[$brand->id] = $brand->name;
+        }*/
+
+        $brandsForDropDown = Brand::getForDropDown();
+        
+    	return view('skincare.create')->with([
+            'brandsForDropDown' => $brandsForDropDown
+        ]);
     }
 
     public function store(Request $request)
@@ -41,11 +53,15 @@ class SkincareController extends Controller
     		'url' => 'url'
     	]);
 
+        # $brand = Brand::find($request->input('brand'));
+
         # Add new skincare product to the database
     	$skincare = new Skincare();
 
     	$skincare->type = $request->input('type');
-    	$skincare->brand = $request->input('brand');
+    	# $skincare->brand = $request->input('brand');
+        # $skincare->brand()->associate($brand); 
+        $skincare->brand_id = $request->input('brand');
     	$skincare->name = $request->input('name');
     	$skincare->price = $request->input('price');
     	$skincare->skintype = $request->input('skintype');
@@ -62,8 +78,12 @@ class SkincareController extends Controller
         if(!$skincare) {
             return redirect('/show-all')->with('alert', 'No product found.');
         }
+
+        $brandsForDropDown = Brand::getForDropDown();
+
         return view('skincare.edit')->with([
-            'skincare' => $skincare
+            'skincare' => $skincare,
+            'brandsForDropDown' => $brandsForDropDown
         ]);
     }
 
@@ -82,7 +102,7 @@ class SkincareController extends Controller
         $skincare = Skincare::find($id);
 
         $skincare->type = $request->input('type');
-        $skincare->brand = $request->input('brand');
+        $skincare->brand_id = $request->input('brand');
         $skincare->name = $request->input('name');
         $skincare->price = $request->input('price');
         $skincare->skintype = $request->input('skintype');

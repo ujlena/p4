@@ -9,7 +9,7 @@
 
 @section("content")
     <h1>You're editing .. </h1> 
-    <p id='nowedit'>{{ $skincare->name }} from {{ $skincare->brand }}</p>
+    <p id='nowedit'>{{ $skincare->name }} from {{ $skincare->brand->name }}</p>
 
     <form method='POST' action='/show-all/{{ $skincare->id }}'>
         <div class='foralign'>
@@ -36,7 +36,13 @@
 
             <p>
                 <label for='brand'>Brand</label>
-                <input type='text' name='brand' id='brand' value="{{ old('brand', $skincare->brand) }}">
+                <!--<input type='text' name='brand' id='brand' value="{{ old('brand', $skincare->brand) }}">-->
+                <select name='brand' id='brand'>
+                    @foreach($brandsForDropDown as $id => $name)
+                        <option value='{{ $id }}' {{ ($id == $skincare->brand->id) ? 'SELECTED' : '' }}>{{ $name }}</option>
+                    @endforeach
+                </select>
+
                 @if($errors->get('brand'))
                     <ul>
                         @foreach($errors->get('brand') as $error)
@@ -108,7 +114,7 @@
                  @endif
             </p>
         </div><!--formalign-->
-        
+
         <p>
             <input type='submit' class='btn' value='Save Changes'>
         </p>

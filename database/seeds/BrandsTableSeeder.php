@@ -18,8 +18,8 @@ class BrandsTableSeeder extends Seeder
         	['Lancome', 'Armand Petitjean', 1935, 'Paris, France', 'https://www.lancome-usa.com/'],
         	['Fresh', 'Lev Glazman, Alina Roytberg', 1991, 'U.S.', 'https://www.fresh.com/'],
         	['Kiehl\'s', 'John Kiehl', 1851, 'New York City, U.S.', 'https://www.kiehls.com/'],
-        	['Origins', 'Leonard Lauder', 1990, 'U.S.', 'https://www.origins.com/']
-
+        	['Origins', 'Leonard Lauder', 1990, 'U.S.', 'https://www.origins.com/'],
+            ['Clarins', 'Jacques Courtin-Clarins', 1954, 'Neuilly-sur-Seine, France', 'https://www.clarins.com/']
         ];
 
         $count = count($brands);
