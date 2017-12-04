@@ -13,6 +13,24 @@ class SkincareController extends Controller
     	return view('skincare.index');
     }
 
+    public function matchProducts(Request $request) 
+    {  
+        $this->validate($request, [
+            'type' => 'required',
+            'skintype' => 'required',
+            'price' => 'required|numeric|min:10|max:100'
+        ]);
+
+        $matchingResult = Skincare::where('type', '=', $request->input('type'))
+                                ->where('skintype', '=', $request->input('skintype'))
+                                ->where('price', '<', $request->input('price'))->get();
+       # dump($matchingResult);
+        
+        return view('skincare.matchProducts')->with([
+            'matchingResult' => $matchingResult
+        ]);
+    }
+
     public function showAll()
     {
     	$products = Skincare::all();
@@ -74,7 +92,7 @@ class SkincareController extends Controller
     public function edit($id)
     {
         $skincare = Skincare::find($id);
-
+        
         if(!$skincare) {
             return redirect('/show-all')->with('alert', 'No product found.');
         }

@@ -24,7 +24,7 @@ class SkincaresTableSeeder extends Seeder
 
         	['Moisturizers', 'Kiehl\'s', 'Ultra Facial Cream', 27.50, 'Normal', 'http://www.kiehls.com/ultra-facial-cream/622.html?cgid=face-moisturizers&dwvar_622_size=4.2%20fl.%20oz.%20Jar#start=4&cgid=face-moisturizers'],
 
-        	['Moisturizers', 'Belif', 'Misturizing Bomb', 38, 'Dry', 'http://global.belifcosmetic.com/product/detail.jsp?pid=B5000025&cid1=A&cid2=E'],
+        	['Moisturizers', 'Belif', 'Moisturizing Bomb', 38, 'Dry', 'http://global.belifcosmetic.com/product/detail.jsp?pid=B5000025&cid1=A&cid2=E'],
 
         	['Eyecreams', 'Origins', 'Refreshing Eye Cream', 30, 'Normal', 'http://www.origins.com/product/15348/11641/skincare/treat/eye-care/GinZing/Refreshing-Eye-Cream-to-Brighten-and-Depuff'],
 
