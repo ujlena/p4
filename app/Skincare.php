@@ -10,4 +10,9 @@ class Skincare extends Model
     {
     	return $this->belongsTo('App\Brand');
     }
+
+    public function tags()
+    {
+    	return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
 }
