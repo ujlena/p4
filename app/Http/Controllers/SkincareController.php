@@ -94,6 +94,7 @@ class SkincareController extends Controller
         $skincare = Skincare::find($id);
         
         if(!$skincare) {
+
             return redirect('/show-all')->with('alert', 'No product found.');
         }
 
