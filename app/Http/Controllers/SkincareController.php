@@ -139,10 +139,25 @@ class SkincareController extends Controller
             return redirect('/show-all')->with('alert', 'No product found.');
         }
         
-        $skincare->delete();
+        return view('skincare.delete')->with(['skincare' => $skincare]);
+
+      /*  $skincare->delete();
         $deletedProductBrand = $skincare->brand;
         $deletedProductName = $skincare->name;
 
-        return redirect('/show-all')->with('alert', $deletedProductBrand.' | '.$deletedProductName . ' has been deleted.');
+        return redirect('/show-all')->with('alert', $deletedProductBrand.' | '.$deletedProductName . ' has been deleted.');*/
+    }
+
+    public function destroy($id) 
+    {
+        $skincare = Skincare::find($id);
+
+        if(!$skincare) {
+            return redirect('/show-all')->with('alert', 'No product found.');
+        }
+
+        $skincare->delete();
+
+        return redirect('/show-all')->with('alert', $skincare->name . ' has been deleted.');
     }
 }

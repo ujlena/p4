@@ -60,3 +60,4 @@ Route::get('/show-all/{id}/edit', 'SkincareController@edit');
 Route::put('/show-all/{id}', 'SkincareController@update');
 
 Route::get('/show-all/{id}/delete', 'SkincareController@delete');
+Route::delete('skincare/{id}', 'SkincareController@destroy');

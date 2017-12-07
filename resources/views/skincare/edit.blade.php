@@ -9,7 +9,7 @@
 
 @section("content")
     <h1>You're editing .. </h1> 
-    <p id='nowedit'>{{ $skincare->name }} from {{ $skincare->brand->name }}</p>
+    <p id='nowedit'><strong>{{ $skincare->name }}</strong> from <strong>{{ $skincare->brand->name }}</strong></p>
 
     <form method='POST' action='/show-all/{{ $skincare->id }}'>
         <div class='foralign'>

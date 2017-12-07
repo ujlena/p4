@@ -52,10 +52,6 @@
                  @endif
             </p>
 
-
-
-
-
             <p>
                 <label for='name'>Name</label>
                 <input type='text' name='name' id='name' value="{{ old('name') }}" placeholder='Soy Face Cleanser'>
