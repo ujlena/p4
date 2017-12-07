@@ -103,6 +103,13 @@
             </p>
 
             <p>
+                <label for='tags'>Concerns</label><br>
+                @foreach ($tagsForCheckboxes as $id => $name) 
+                    <input type='checkbox' value='{{ $id }}' name='tags[]' {{ (in_array($name, $tagsForThisProduct)) ? 'CHECKED' : '' }} >{{ $name }}<br>
+                @endforeach
+            </p>
+
+            <p>
                 <label for='url'>Website</label>
                 <input type='text' name='url' id='url' value="{{ old('url', $skincare->url) }}">
                 @if($errors->get('url'))

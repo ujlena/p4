@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Skincare;
 use App\Brand;
+use App\Tag;
 
 class SkincareController extends Controller
 {
@@ -99,10 +100,18 @@ class SkincareController extends Controller
         }
 
         $brandsForDropDown = Brand::getForDropDown();
+        $tagsForCheckboxes = Tag::getForCheckboxes();
+        $tagsForThisProduct = [];
+
+        foreach($skincare->tags as $tag) {
+            $tagsForThisProduct[] = $tag->name;
+        }
 
         return view('skincare.edit')->with([
             'skincare' => $skincare,
-            'brandsForDropDown' => $brandsForDropDown
+            'brandsForDropDown' => $brandsForDropDown,
+            'tagsForCheckboxes' => $tagsForCheckboxes,
+            'tagsForThisProduct' => $tagsForThisProduct
         ]);
     }
 
@@ -119,6 +128,8 @@ class SkincareController extends Controller
         ]);
 
         $skincare = Skincare::find($id);
+
+        $skincare->tags()->sync($request->input('tags'));
 
         $skincare->type = $request->input('type');
         $skincare->brand_id = $request->input('brand');
@@ -140,12 +151,6 @@ class SkincareController extends Controller
         }
         
         return view('skincare.delete')->with(['skincare' => $skincare]);
-
-      /*  $skincare->delete();
-        $deletedProductBrand = $skincare->brand;
-        $deletedProductName = $skincare->name;
-
-        return redirect('/show-all')->with('alert', $deletedProductBrand.' | '.$deletedProductName . ' has been deleted.');*/
     }
 
     public function destroy($id) 
@@ -156,8 +161,13 @@ class SkincareController extends Controller
             return redirect('/show-all')->with('alert', 'No product found.');
         }
 
+        $skincare->tags()->detach();
+
         $skincare->delete();
 
-        return redirect('/show-all')->with('alert', $skincare->name . ' has been deleted.');
+        $deletedProductBrand = $skincare->brand->name;
+        $deletedProductName = $skincare->name;
+
+        return redirect('/show-all')->with('alert', $deletedProductBrand.' | '.$deletedProductName . ' has been deleted.');
     }
 }
