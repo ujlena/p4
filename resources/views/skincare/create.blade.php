@@ -113,5 +113,4 @@
             <input type='submit' class='btn' value='Add Product'>
         </p>
     </form>
-</p>
 @endsection

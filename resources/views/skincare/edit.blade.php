@@ -101,7 +101,7 @@
             <p>
                 <label for='tags'>Concerns</label><br>
                 @foreach ($tagsForCheckboxes as $id => $name) 
-                    <input type='checkbox' value='{{ $id }}' name='tags[]' {{ (in_array($name, $tagsForThisProduct)) ? 'CHECKED' : '' }} >{{ $name }}<br>
+                    <input type='checkbox' value='{{ $id }}' id='tags' name='tags[]' {{ (in_array($name, $tagsForThisProduct)) ? 'CHECKED' : '' }} >{{ $name }}<br>
                 @endforeach
             </p>
 
