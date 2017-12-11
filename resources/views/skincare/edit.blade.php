@@ -72,31 +72,30 @@
                  @endif
             </p>
 
-            <p>Skin Type
-                <p>
-                    <input type="radio" id="dry" name="skintype" value="Dry" {{ (old("skintype", $skincare->skintype) == "Dry") ? "CHECKED" : "" }}>
-                    <label for="dry">Dry</label>
-                </p>
-                <p> 
-                    <input type="radio" id="oily" name="skintype" value="Oily" {{ (old("skintype", $skincare->skintype) == "Oily") ? "CHECKED" : "" }}>
-                    <label for="oily">Oily</label>
-                </p>
-                <p> 
-                    <input type="radio" id="combination" name="skintype" value="Combination" {{ (old("skintype", $skincare->skintype) == "Combination") ? "CHECKED" : "" }}>
-                    <label for="combination">Combination</label>
-                </p>
-                <p>
-                    <input type="radio" id="normal" name="skintype" value="Normal" {{ (old("skintype", $skincare->skintype) == "Normal") ? "CHECKED" : "" }}>
-                    <label for="normal">Normal</label>
-                </p>
-                @if($errors->get('skintype'))
-                    <ul>
-                        @foreach($errors->get('skintype') as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+            <p>Skin Type</p>
+            <p>
+                <input type="radio" id="dry" name="skintype" value="Dry" {{ (old("skintype", $skincare->skintype) == "Dry") ? "CHECKED" : "" }}>
+                <label for="dry">Dry</label>
             </p>
+            <p> 
+                <input type="radio" id="oily" name="skintype" value="Oily" {{ (old("skintype", $skincare->skintype) == "Oily") ? "CHECKED" : "" }}>
+                <label for="oily">Oily</label>
+            </p>
+            <p> 
+                <input type="radio" id="combination" name="skintype" value="Combination" {{ (old("skintype", $skincare->skintype) == "Combination") ? "CHECKED" : "" }}>
+                <label for="combination">Combination</label>
+            </p>
+            <p>
+                <input type="radio" id="normal" name="skintype" value="Normal" {{ (old("skintype", $skincare->skintype) == "Normal") ? "CHECKED" : "" }}>
+                <label for="normal">Normal</label>
+            </p>
+            @if($errors->get('skintype'))
+                <ul>
+                    @foreach($errors->get('skintype') as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
 
             <p>Concerns<br>
                 @foreach ($tagsForCheckboxes as $id => $name) 

@@ -15,5 +15,4 @@
             <p>No result found..</p>
         @endforelse
     </div>
-    
 @endsection
