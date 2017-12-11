@@ -25,8 +25,7 @@ class SkincareController extends Controller
         $matchingResult = Skincare::where('type', '=', $request->input('type'))
                                 ->where('skintype', '=', $request->input('skintype'))
                                 ->where('price', '<', $request->input('price'))->get();
-       # dump($matchingResult);
-        
+  
         return view('skincare.matchProducts')->with([
             'matchingResult' => $matchingResult
         ]);
@@ -46,13 +45,6 @@ class SkincareController extends Controller
 
     public function create() 
     {
-        /*$brands = Brand::get();
-        $brandsForDropDown = [];
-
-        foreach ($brands as $brand) {
-            $brandsForDropDown[$brand->id] = $brand->name;
-        }*/
-
         $brandsForDropDown = Brand::getForDropDown();
         
     	return view('skincare.create')->with([
@@ -71,8 +63,6 @@ class SkincareController extends Controller
     		'skintype' => 'required',
     		'url' => 'url'
     	]);
-
-        # $brand = Brand::find($request->input('brand'));
 
         # Add new skincare product to the database
     	$skincare = new Skincare();

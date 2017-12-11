@@ -17,7 +17,6 @@ class CreateSkincaresTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('type')->comment("Product types");
-            # $table->string('brand');
             $table->string('name');
             $table->float('price');
             $table->string('skintype');

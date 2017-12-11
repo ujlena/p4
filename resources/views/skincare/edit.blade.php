@@ -36,7 +36,6 @@
 
             <p>
                 <label for='brand'>Brand</label>
-                <!--<input type='text' name='brand' id='brand' value="{{ old('brand', $skincare->brand) }}">-->
                 <select name='brand' id='brand'>
                     @foreach($brandsForDropDown as $id => $name)
                         <option value='{{ $id }}' {{ ($id == $skincare->brand->id) ? 'SELECTED' : '' }}>{{ $name }}</option>

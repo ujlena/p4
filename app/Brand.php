@@ -8,7 +8,6 @@ class Brand extends Model
 {
     public function skincares()
     {
-    	# one-to-many
     	return $this->hasMany('App\Skincare');
     }
 
