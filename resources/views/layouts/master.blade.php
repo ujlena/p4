@@ -26,7 +26,7 @@
 			<ul>
 				<li><a href='/'>Home</a></li>
 				<li><a href='/skincare'>Find Skincare</a></li>
-				<li><a href='/show-all'>See All Skincare</a></li>
+				<li><a href='/show-all'>See All Skincares</a></li>
 				<li><a href='/show-all/create'>Add New Skincare</a></li>
 			</ul>
 		</nav>

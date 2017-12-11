@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <h1>See All Skincares</h1>
+    <h2>See All Skincares</h2>
     <div class='newestProduct'>
         <h3>New Skincare Products were recently added</h3>
         @foreach($newestProduct as $product) 

@@ -4,11 +4,8 @@
     Delete skincare product
 @endsection
 
-@push("head")
-@endpush
-
 @section("content")
-    <h1>You want to delete .. </h1>
+    <h2>You want to delete .. </h2>
     <p id='nowedit'><strong>{{ $skincare->name }}</strong> from <strong>{{ $skincare->brand->name }}</strong></p>
 
     <form method='POST' action='/skincare/{{ $skincare->id }}'>

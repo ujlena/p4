@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <h1>Find your skincare products</h1>
+    <h2>Find your skincare products</h2>
 	<form method="GET" action="/skincare/match-products">
 		<div class='foralign'>
 

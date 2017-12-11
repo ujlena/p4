@@ -4,11 +4,8 @@
     Create new skincare product
 @endsection
 
-@push("head")
-@endpush
-
 @section("content")
-    <h1>Create new skincare product</h1>
+    <h2>Create new skincare product</h2>
     
     <form method='POST' action='/show-all'>
         <div class='foralign'>

@@ -4,11 +4,8 @@
     Edit skincare product
 @endsection
 
-@push("head")
-@endpush
-
 @section("content")
-    <h1>You're editing .. </h1> 
+    <h2>You're editing .. </h2> 
     <p id='nowedit'><strong>{{ $skincare->name }}</strong> from <strong>{{ $skincare->brand->name }}</strong></p>
 
     <form method='POST' action='/show-all/{{ $skincare->id }}'>

@@ -5,6 +5,6 @@
 @endsection
 
 @section("content")
-    <h1 class="pagetitle">Welcome to Skincare Finder!</h1>
+    <h2 class="pagetitle">Welcome to Skincare Finder!</h2>
 	<a href="/skincare" id="mainimglink"><img src="images/mainimg.jpg" alt="main" id="mainimg"></a>
 @endsection

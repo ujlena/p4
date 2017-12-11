@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <h1>Your Matching Result</h1>
+    <h2>Your Matching Result</h2>
     <div>
         <h3>Here are some products for you..</h3>
        
