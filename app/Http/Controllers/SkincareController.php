@@ -68,8 +68,6 @@ class SkincareController extends Controller
     	$skincare = new Skincare();
 
     	$skincare->type = $request->input('type');
-    	# $skincare->brand = $request->input('brand');
-        # $skincare->brand()->associate($brand); 
         $skincare->brand_id = $request->input('brand');
     	$skincare->name = $request->input('name');
     	$skincare->price = $request->input('price');

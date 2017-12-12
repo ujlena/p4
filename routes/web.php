@@ -61,3 +61,17 @@ Route::put('/show-all/{id}', 'SkincareController@update');
 
 Route::get('/show-all/{id}/delete', 'SkincareController@delete');
 Route::delete('skincare/{id}', 'SkincareController@destroy');
+
+Auth::routes();
+Route::get('/show-login-status', function () {
+    $user = Auth::user();
+
+    if ($user) {
+        dump('You are logged in.', $user->toArray());
+    } else {
+        dump('You are not logged in.');
+    }
+
+    return;
+});
+

@@ -8,11 +8,12 @@
     <h2>Your Matching Result</h2>
     <div>
         <h3>Here are some products for you..</h3>
-       
-        @forelse($matchingResult as $matchingProduct)
-            <p>{{ $matchingProduct->brand->name }} | {{ $matchingProduct->name }}</p>
-        @empty
-            <p>No result found..</p>
-        @endforelse
+        <div id='matchlist'>
+            @forelse($matchingResult as $matchingProduct)
+                <p>{{ $matchingProduct->brand->name }} | {{ $matchingProduct->name }} | <a href='{{ $matchingProduct->url }}'>link to buy</a></p>
+            @empty
+                <p>No result found..</p>
+            @endforelse
+        </div>
     </div>
 @endsection

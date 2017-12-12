@@ -26,6 +26,27 @@ ul li a:hover {
 	color: #000;
 }
 
+div#loginout {
+	float: right;
+}
+
+header {
+	clear: both;
+}
+
+body div#loginout ul#loginoutlist {
+	
+	font-size: .8em;
+}
+body div#loginout ul#loginoutlist a {
+	color: orange;
+}
+
+body div#loginout ul#loginoutlist a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 header h1 {
 	width: 34%;
 	float: left;
@@ -84,12 +105,10 @@ p#nowedit {
 
 }
 
-form, div.mainfield {
+section form, div.mainfield {
 	border: 3px double #e6e6e6;
 	margin-top: 2em;
 }
-
-
 
 form .foralign {
 	/*border: 1px solid green;*/
@@ -97,7 +116,6 @@ form .foralign {
 	margin-left: 10em;
 	margin-right: 10em;
 	padding-left: 15em;
-
 }
 
 p a {
@@ -113,6 +131,14 @@ p a:hover {
 section h2 {
 	color: orange;
 	padding-top: 2em;
+}
+
+section div#matchlist {
+	background-color: #ffffe6;
+} 
+
+section h3 {
+	padding-top: 1em;
 }
 
 .newestProduct {

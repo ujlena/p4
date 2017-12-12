@@ -8,7 +8,6 @@
 	<meta charset='utf-8'>
     <link href='/css/skincare.css' type='text/css' rel='stylesheet'>
     @stack("head")
-
 </head>
 
 <body>
@@ -18,6 +17,18 @@
             {{ session('alert') }}
         </div>
     @endif
+
+	<div id='loginout'>
+		<ul id='loginoutlist'>
+			<li><a href='/login'>Login</a></li>
+			<li>
+				<form method='POST' id='logout' action='/logout'>
+					{{ csrf_field() }}
+					<a href='#'' onClick="document.getElementById('logout').submit();">Logout</a>
+				</form>
+			</li>
+		</ul>
+	</div>
 
 	<header>
 		<h1>Skincare Finder</h1>
