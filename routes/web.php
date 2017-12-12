@@ -47,22 +47,27 @@ Route::get('/env', function () {
 
 Route::get('/', 'WelcomeController');
 
-Route::get('/skincare/', 'SkincareController@index');
 
-Route::get('/show-all/', 'SkincareController@showAll');
+Route::group(['middleware' => 'auth'], function() { 
+    Route::get('/skincare/', 'SkincareController@index');
 
-Route::get('/skincare/match-products', 'SkincareController@matchProducts');
+    Route::get('/show-all/', 'SkincareController@showAll');
 
-Route::get('/show-all/create', 'SkincareController@create');
-Route::post('/show-all/', 'SkincareController@store');
+    Route::get('/skincare/match-products', 'SkincareController@matchProducts');
 
-Route::get('/show-all/{id}/edit', 'SkincareController@edit');
-Route::put('/show-all/{id}', 'SkincareController@update');
+    Route::get('/show-all/create', 'SkincareController@create');
+    Route::post('/show-all/', 'SkincareController@store');
 
-Route::get('/show-all/{id}/delete', 'SkincareController@delete');
-Route::delete('skincare/{id}', 'SkincareController@destroy');
+    Route::get('/show-all/{id}/edit', 'SkincareController@edit');
+    Route::put('/show-all/{id}', 'SkincareController@update');
+
+    Route::get('/show-all/{id}/delete', 'SkincareController@delete');
+    Route::delete('skincare/{id}', 'SkincareController@destroy');
+
+});
 
 Auth::routes();
+
 Route::get('/show-login-status', function () {
     $user = Auth::user();
 
@@ -74,4 +79,3 @@ Route::get('/show-login-status', function () {
 
     return;
 });
-
