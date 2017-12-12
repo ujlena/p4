@@ -24,7 +24,7 @@
 			<li>
 				<form method='POST' id='logout' action='/logout'>
 					{{ csrf_field() }}
-					<a href='#'' onClick="document.getElementById('logout').submit();">Logout</a>
+					<a href='/' onClick="document.getElementById('logout').submit();">Logout</a>
 				</form>
 			</li>
 		</ul>
